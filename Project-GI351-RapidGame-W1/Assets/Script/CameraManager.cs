@@ -14,8 +14,8 @@ public class CameraManager : MonoBehaviour
     [Range(0, 100)] public float spawnChance = 50f;
 
     [Header("Auto Switch System")]
-    public bool isAutoSwitch = true;      // ติ๊กเปิด/ปิด ระบบสลับอัตโนมัติ
-    public float switchInterval = 5f;     // ระยะเวลาเปลี่ยนกล้อง (วินาที)
+    public bool isAutoSwitch = true;
+    public float switchInterval = 5f;
     private float timer = 0f;
 
     void Start()
@@ -25,7 +25,6 @@ public class CameraManager : MonoBehaviour
 
     void Update()
     {
-        // ระบบสลับอัตโนมัติ
         if (isAutoSwitch && cameras != null && cameras.Length > 1)
         {
             timer += Time.deltaTime;
@@ -46,7 +45,6 @@ public class CameraManager : MonoBehaviour
         // สุ่มเกิด Anomaly ที่กล้องตัวเดิมก่อนสลับหนี
         TrySpawnAnomaly(currentCamIndex);
 
-        // สลับไปกล้องใหม่
         currentCamIndex = newIndex;
         UpdateCameraUI();
     }
@@ -63,13 +61,27 @@ public class CameraManager : MonoBehaviour
         }
     }
 
-    // ฟังก์ชันเคลียร์ Anomaly เมื่อเอาเมาส์จ่อ Hitbox สำเร็จ
+    // ฟังก์ชันแก้ Anomaly ของกล้องปัจจุบัน
+    // ฟังก์ชันแก้ Anomaly ของกล้องปัจจุบัน
     public void ResolveCurrentAnomaly()
     {
         if (cameras != null && currentCamIndex < cameras.Length)
         {
-            cameras[currentCamIndex].hasAnomaly = false;
-            UpdateCameraUI();
+            if (cameras[currentCamIndex].hasAnomaly)
+            {
+                // 1. เคลียร์สถานะผีออก
+                cameras[currentCamIndex].hasAnomaly = false;
+
+                // 2. สั่งให้ MeltdownManager ลดค่า Panic ทันที 20 หน่วย
+                MeltdownManager meltdown = FindFirstObjectByType<MeltdownManager>();
+                if (meltdown != null)
+                {
+                    meltdown.ReducePanicOnFix(20f); // ลด 20 หน่วยตรงนี้
+                }
+
+                // 3. อัปเดตหน้าจอ UI
+                UpdateCameraUI();
+            }
         }
     }
 
@@ -84,10 +96,9 @@ public class CameraManager : MonoBehaviour
                 cameras[i].hoverHitbox.SetActive(false);
         }
 
-        // ดึงข้อมูลกล้องปัจจุบัน
         CameraData currentCam = cameras[currentCamIndex];
 
-        // สลับรูปภาพ Normal / Anomaly
+        // สลับรูปภาพ Normal / Anomaly และจัดการ Hitbox
         if (currentCam.hasAnomaly)
         {
             if (currentCam.anomalySprite != null)
