@@ -1588,13 +1588,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbaadb455e0d2664785a854da84e5de8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MeltdownManager
-  camManager: {fileID: 0}
   panicSlider: {fileID: 1751043738}
   corruptSlider: {fileID: 1016368726}
-  panicLevel: 0
-  corruptLevel: 0
-  corruptSpeed: 3
-  panicRecoverSpeed: 5
+  currentPanic: 0
+  maxPanic: 100
+  normalPanicRate: 3
+  anomalyPanicRate: 20
+  currentCorrupt: 0
+  maxCorrupt: 100
+  corruptIncreaseRate: 20
+  corruptDecreaseRate: 10
+  cameraManager: {fileID: 1863702762}
 --- !u!114 &1863702762
 MonoBehaviour:
   m_ObjectHideFlags: 0
