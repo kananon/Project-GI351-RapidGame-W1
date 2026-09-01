@@ -25,6 +25,7 @@ public class MeltdownManager : MonoBehaviour
 
     [Header("References")]
     public CameraManager cameraManager;
+    public PauseMenu pauseMenu;
 
     private bool isGameOver = false;
 
@@ -110,6 +111,12 @@ public class MeltdownManager : MonoBehaviour
     private void TriggerGameOver()
     {
         isGameOver = true;
+
         Debug.Log("<color=red>GAME OVER! MELTDOWN COMPLETE!</color>");
+
+        if (pauseMenu != null)
+        {
+            pauseMenu.GameOver();
+        }
     }
 }

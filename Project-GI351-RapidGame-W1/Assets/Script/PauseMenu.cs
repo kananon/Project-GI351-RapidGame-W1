@@ -5,11 +5,15 @@ using UnityEngine.InputSystem;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pausePanel;
+    public GameObject gameOverPanel;
 
     void Update()
     {
-        if (Keyboard.current.escapeKey.wasPressedThisFrame)
+        if (Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)
         {
+            if (gameOverPanel != null && gameOverPanel.activeSelf)
+                return;
+
             if (pausePanel.activeSelf)
                 Resume();
             else
@@ -27,6 +31,18 @@ public class PauseMenu : MonoBehaviour
     {
         pausePanel.SetActive(false);
         Time.timeScale = 1f;
+    }
+
+    public void GameOver()
+    {
+        gameOverPanel.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    public void Retry()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void MainMenu()
