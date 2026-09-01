@@ -7,6 +7,8 @@ public class PauseMenu : MonoBehaviour
     public GameObject pausePanel;
     public GameObject gameOverPanel;
 
+    public GameObject winPanel;
+
     void Update()
     {
         if (Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)
@@ -49,5 +51,11 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void Win()
+    {
+        winPanel.SetActive(true);
+        Time.timeScale = 0f;
     }
 }
