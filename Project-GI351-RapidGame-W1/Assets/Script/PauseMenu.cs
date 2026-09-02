@@ -9,6 +9,10 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject winPanel;
 
+    [Header("Game Over Sound")]
+    public AudioSource gameOverAudioSource;
+    public AudioClip gameOverSound;
+
     void Update()
     {
         if (Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)
@@ -38,6 +42,14 @@ public class PauseMenu : MonoBehaviour
     public void GameOver()
     {
         gameOverPanel.SetActive(true);
+
+        // เล่นเสียงตอนแพ้
+        if (gameOverAudioSource != null && gameOverSound != null)
+        {
+            gameOverAudioSource.ignoreListenerPause = true;
+            gameOverAudioSource.PlayOneShot(gameOverSound);
+        }
+
         Time.timeScale = 0f;
     }
 
