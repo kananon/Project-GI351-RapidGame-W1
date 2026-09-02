@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,6 +18,11 @@ public class CameraManager : MonoBehaviour
     public bool isAutoSwitch = true;
     public float switchInterval = 5f;
     private float timer = 0f;
+
+    [Header("Camera Switch Sound")]
+    public AudioSource audioSource;
+    public AudioClip switchSound;
+    public float soundDuration = 0.3f;
 
     void Start()
     {
@@ -47,6 +53,22 @@ public class CameraManager : MonoBehaviour
 
         currentCamIndex = newIndex;
         UpdateCameraUI();
+
+        // เล่นเสียงตอนสลับกล้อง
+        if (audioSource != null && switchSound != null)
+        {
+            StartCoroutine(PlaySwitchSound());
+        }
+    }
+
+    private IEnumerator PlaySwitchSound()
+    {
+        audioSource.Stop();
+        audioSource.PlayOneShot(switchSound);
+
+        yield return new WaitForSeconds(soundDuration);
+
+        audioSource.Stop();
     }
 
     private void TrySpawnAnomaly(int camIndex)
