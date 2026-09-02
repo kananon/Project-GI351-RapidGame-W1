@@ -4195,6 +4195,8 @@ MonoBehaviour:
   pausePanel: {fileID: 1365473966}
   gameOverPanel: {fileID: 985803020}
   winPanel: {fileID: 224222437}
+  gameOverAudioSource: {fileID: 270745450}
+  gameOverSound: {fileID: 8300000, guid: 3e9a7fcdf07a4444e9b02e6047695814, type: 3}
 --- !u!1 &1975537135
 GameObject:
   m_ObjectHideFlags: 0
