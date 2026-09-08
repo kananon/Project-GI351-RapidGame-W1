@@ -594,8 +594,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 645, y: -265}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 20.91, y: 115.84}
+  m_SizeDelta: {x: 166.57, y: 37.06}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &227123317
 MonoBehaviour:
@@ -610,7 +610,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -669,7 +669,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.000005722046, y: 0}
+  m_Offset: {x: -0.32909393, y: -0.5477619}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -679,7 +679,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 99.171036, y: 100}
+  m_Size: {x: 165.65068, y: 36.987278}
   m_EdgeRadius: 0
 --- !u!114 &227123320
 MonoBehaviour:
@@ -693,7 +693,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 389cc4585da68bb4da68f1c99ac1610c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AnomalyHitbox
-  timeToFix: 0.5
+  timeToFix: 2
 --- !u!1 &264999728
 GameObject:
   m_ObjectHideFlags: 0
@@ -2643,8 +2643,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -661, y: 269}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 0.00043421, y: -61.021}
+  m_SizeDelta: {x: 18.428, y: 40.918}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &988029937
 MonoBehaviour:
@@ -2696,7 +2696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 389cc4585da68bb4da68f1c99ac1610c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AnomalyHitbox
-  timeToFix: 0.5
+  timeToFix: 2
 --- !u!61 &988029940
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2731,7 +2731,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.000005722046, y: -0.0000019073486}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2741,7 +2741,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 100, y: 100}
+  m_Size: {x: 19.513458, y: 39.889797}
   m_EdgeRadius: 0
 --- !u!1 &997296706
 GameObject:
@@ -2916,7 +2916,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -376, y: -418}
+  m_AnchoredPosition: {x: -157, y: -255}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1016368726
@@ -3855,7 +3855,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -576, y: -418}
+  m_AnchoredPosition: {x: -357, y: -255}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1751043738
@@ -4176,7 +4176,7 @@ MonoBehaviour:
   currentCamIndex: 0
   spawnChance: 100
   isAutoSwitch: 1
-  switchInterval: 5
+  switchInterval: 10
   audioSource: {fileID: 777069144}
   switchSound: {fileID: 8300000, guid: b8c676f192354084ba324a863cf46bba, type: 3}
   soundDuration: 0.3
