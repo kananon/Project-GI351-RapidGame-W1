@@ -79,7 +79,7 @@ public class GameTimer : MonoBehaviour
         // เรียก Game Over ที่มีอยู่แล้ว
         if (pauseMenu != null)
         {
-            pauseMenu.GameOver();
+            pauseMenu.Win();
         }
     }
 }
